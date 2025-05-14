@@ -1,0 +1,15 @@
+CLASS zcl_pdb_bp_ar_str_mgr DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+  INTERFACES if_arch_storage_manager.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS zcl_pdb_bp_ar_str_mgr IMPLEMENTATION.
+ENDCLASS.

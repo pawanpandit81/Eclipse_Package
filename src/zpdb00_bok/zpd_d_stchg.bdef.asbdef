@@ -1,0 +1,12 @@
+abstract;
+strict ( 2 );
+with hierarchy;
+define behavior for ZPD_D_STCHG alias BOH_S
+{
+  association _before;
+}
+
+define behavior for ZPD_D_STCHG_O alias BOH_S_O
+{
+  association _parent;
+}

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SIA6" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <SIA6>
+    <MAIN_OBJECT>
+     <NAME>ZPDB00_IAM_SLS_EXT</NAME>
+     <TYPE>SIA6</TYPE>
+     <DESCRIPTION>IAM Sales</DESCRIPTION>
+     <RESPONSIBLE>CB9980000779</RESPONSIBLE>
+     <MASTER_LANGUAGE>EN</MASTER_LANGUAGE>
+     <MASTER_SYSTEM>TRL</MASTER_SYSTEM>
+     <PACKAGE_REF>
+      <PACKAGE_NAME>ZPDB00_RAP</PACKAGE_NAME>
+     </PACKAGE_REF>
+     <ABAP_LANGU_VERSION>5</ABAP_LANGU_VERSION>
+    </MAIN_OBJECT>
+    <APP_ID>ZPDB00_IAM_SLS_EXT</APP_ID>
+    <APP_TYPE>EXT</APP_TYPE>
+    <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
+    <SERVICE>
+     <item>
+      <REL_NAME>ZPDB00_I_R_SB_SLS_SQL</REL_NAME>
+      <REL_TYPE>SQL1</REL_TYPE>
+      <APP_ID>ZPDB00_IAM_SLS_EXT</APP_ID>
+      <SRVC_NAME>5E509A2570AF8D79B355A8FBAEB4D3</SRVC_NAME>
+      <SRVC_TYPE>HT</SRVC_TYPE>
+      <TEXT>Simple Service Binding SQL</TEXT>
+      <TYPE_TEXT>SQL1 Service</TYPE_TEXT>
+     </item>
+    </SERVICE>
+    <AUTH>
+     <item>
+      <AUTH_OBJECT>ZPDB_REGN</AUTH_OBJECT>
+      <STATUS>G</STATUS>
+      <TEXT>Authorization Obj of Region</TEXT>
+      <AUTH_ITEM>
+       <item>
+        <UUID>VqbFGczwHt+/2z4s171hQQ==</UUID>
+        <AUTH_OBJECT>ZPDB_REGN</AUTH_OBJECT>
+        <AUTH_OBJECT_INSTANCE>0001</AUTH_OBJECT_INSTANCE>
+        <TEXT>Authorization Obj of Region</TEXT>
+        <STATUS>G</STATUS>
+        <VALUES>
+         <item>
+          <FIELD>ZPDB_REGN</FIELD>
+          <VALUE>A-B</VALUE>
+          <VALUES>
+           <item>
+            <UUID>VqbFGczwHt+/2z4s172BQQ==</UUID>
+           </item>
+           <item>
+            <UUID>VqbFGczwHt+/2z4s172hQQ==</UUID>
+            <LOW_VALUE>A</LOW_VALUE>
+            <HIGH_VALUE>B</HIGH_VALUE>
+           </item>
+          </VALUES>
+          <TEXT>Region</TEXT>
+          <STATUS>U</STATUS>
+         </item>
+         <item>
+          <FIELD>ACTVT</FIELD>
+          <VALUES>
+           <item>
+            <UUID>VqbFGczwHt+/2z4s173BQQ==</UUID>
+           </item>
+          </VALUES>
+          <TEXT>Activity</TEXT>
+          <STATUS>G</STATUS>
+          <IS_ACTVT>X</IS_ACTVT>
+         </item>
+        </VALUES>
+       </item>
+      </AUTH_ITEM>
+     </item>
+    </AUTH>
+    <PUBLISH_STATUS>p</PUBLISH_STATUS>
+   </SIA6>
+  </asx:values>
+ </asx:abap>
+</abapGit>

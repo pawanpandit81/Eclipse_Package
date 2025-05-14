@@ -1,0 +1,6 @@
+@EndUserText.quickInfo: 'Inv. status'
+@EndUserText.label: 'Invoice status'
+@EndUserText.heading: 'Invoice status'
+@AbapCatalog.typeSpec:{ changeDocumentRelevant: true,
+                        conversionExit: 'ALPHA'}
+define type ZPDB00_TYPE : abap.char(1)

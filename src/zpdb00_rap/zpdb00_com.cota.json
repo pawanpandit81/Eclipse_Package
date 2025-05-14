@@ -1,0 +1,13 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Communication Setup",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "configuration": {
+    "communicationTargetClass": "ZPDB00_COM",
+    "allowMultipleDestinations": true
+  },
+  "rfcSettings": {}
+}

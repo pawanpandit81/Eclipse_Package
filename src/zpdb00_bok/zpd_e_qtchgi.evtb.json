@@ -1,0 +1,21 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Event Item Quantity",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "producerNamespace": "zsap.beh.s4",
+  "producer": "P93B7EBDB43C046ABB306082D956989DD",
+  "producerVersion": "0001",
+  "boName": "ZBOHI",
+  "boOperation": "ItemQuantityChanged",
+  "producerType": "zsap.beh.s4.ZBOHI.ItemQuantityChanged.v*",
+  "events": [
+    {
+      "eventVersion": "0001",
+      "entityName": "ZPD_R_OBID_IT",
+      "entityEventName": "ITEMQUANTITYCHANGED"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+@Metadata.layer: #CUSTOMER
+annotate entity ZPDB00_R_BUPA with
+{
+  @UI.facet      : [
+                  {
+                    id         : 'Collection',
+                    type       : #COLLECTION,
+                    label      : 'Partner Collection'
+                  },
+            {
+            id         : 'PartnerFields',
+            label      : 'Partner Information',
+            type       : #IDENTIFICATION_REFERENCE,
+            targetQualifier: 'PARTNER_INFO',
+                  parentId   : 'Collection'
+          },
+          {
+            id         : 'PartnerAddress',
+            label      : 'Address',
+            type       : #IDENTIFICATION_REFERENCE,
+            targetQualifier: 'PARTNER_ADDR',
+                 parentId   : 'Collection'
+           }
+          ]
+  @UI.selectionField : [ { position: 10 } ]
+  @UI.lineItem: [{ position: 10, importance: #HIGH },
+                 { position: 10, type: #FOR_ACTION, label: 'Fill', dataAction: 'fillStreet' },
+                 { position: 20, type: #FOR_ACTION, label: 'Copy Line', dataAction: 'copyLine' },
+                 { position: 30, type: #FOR_ACTION, label: 'Clear All', dataAction: 'clearAllStreet' }]
+  @UI.identification: [{ position: 10, qualifier: 'PARTNER_INFO' }]
+  @EndUserText.label: 'Partner'
+  @EndUserText.quickInfo: 'Partner Number'
+  PartnerNo;
+  @UI.selectionField : [ { position: 20 } ]
+  @UI.lineItem: [{ position: 10,
+                   importance: #HIGH }]
+  @UI.identification: [{ position: 20, qualifier: 'PARTNER_INFO' }]
+  @EndUserText.label: 'Partner Name'
+  @EndUserText.quickInfo: 'Partner Name'
+  Name;
+  @UI.lineItem: [{ position: 30,
+                   importance: #MEDIUM }]
+  @UI.identification: [{ position: 30, qualifier: 'PARTNER_ADDR' }]
+  @EndUserText.label: 'Street'
+  @EndUserText.quickInfo: 'Street'
+  Street;
+  @UI.lineItem: [{ position: 40,
+                   importance: #MEDIUM }]
+  @UI.identification: [{ position: 40, qualifier: 'PARTNER_ADDR' }]
+  @EndUserText.label: 'City'
+  @EndUserText.quickInfo: 'City'
+  City;
+  @UI.lineItem: [{ position: 50,
+                   importance: #MEDIUM }]
+  @UI.identification: [{ position: 50, qualifier: 'PARTNER_ADDR' }]
+  @EndUserText.label: 'Country'
+  @EndUserText.quickInfo: 'Country Code'
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'I_CountryVH',
+                                                 element: 'Country' } }]
+  Country;
+  //  @UI.lineItem: [{ position: 60,
+  //                   importance: #LOW }]
+  @UI.identification: [{ position: 60, qualifier: 'PARTNER_INFO' }]
+  @EndUserText.label: 'Currency'
+  @EndUserText.quickInfo: 'Payment Currency'
+  @Consumption.valueHelpDefinition: [{ entity: { name: 'I_CurrencyStdVH',
+                                                 element: 'Currency' } }]
+  Currency;
+  @EndUserText.label: 'Created By'
+  //@Semantics.user.createdBy: true
+  CreatedBy;
+  @EndUserText.label: 'Created At'
+  // @Semantics.systemDateTime.createdAt: true
+  CreatedAt;
+  @EndUserText.label: 'Changed By'
+  //  @Semantics.user.localInstanceLastChangedBy: true
+  ChangedBy;
+  @EndUserText.label: 'Changed At'
+  //  @Semantics.systemDateTime.localInstanceLastChangedAt: true
+  ChangedAt;
+  @EndUserText.label: 'Last Change'
+  //  @Semantics.systemDateTime.lastChangedAt: true
+  LastChangedAt;
+
+}

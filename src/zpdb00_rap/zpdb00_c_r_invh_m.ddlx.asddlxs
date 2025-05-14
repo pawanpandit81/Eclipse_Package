@@ -1,0 +1,52 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'Head',
+    typeNamePlural: 'Heads',
+    title: { value: 'DocumentNo' },
+    description: { label: '(Description)' },
+    typeImageUrl: 'sap-icon://my-sales-order'
+  }
+}
+annotate entity ZPDB00_C_R_INVH with
+{
+  @UI.facet : [ { id             : 'FacetControlHeader',
+                  label          : 'Header',
+                  type           : #FIELDGROUP_REFERENCE,
+                  purpose        : #HEADER,
+                  targetQualifier: 'CONTROL_HEADER' },
+                { id             : 'FacetFieldArea',
+                  label          : 'Information',
+                  type           : #FIELDGROUP_REFERENCE,
+                  purpose        : #STANDARD,
+                  targetQualifier: 'FIELD_AREA' },
+                { id             : 'controlSection',
+                  type           : #LINEITEM_REFERENCE,
+                  position       : 20,
+                  targetElement  : '_Item' } ]
+
+  @UI            : { selectionField : [ { position: 10 } ],
+                     lineItem     : [{ position: 10 }] }
+  DocumentNo;
+  @UI            : { lineItem     : [{ position: 20 }],
+                     fieldGroup   : [{ position: 20,
+                                       qualifier: 'FIELD_AREA',
+                                       label: 'Date' }] }
+  DocDate;
+  @UI            : { lineItem     : [{ position: 30 }],
+                     fieldGroup   : [{ position: 30,
+                                       qualifier: 'FIELD_AREA',
+                                       label: 'Time' }] }
+  DocTime;
+  @UI            : { selectionField : [ { position: 20 } ],
+                     lineItem     : [{ position: 40 }],
+                     fieldGroup   : [{ position: 40,
+                                       qualifier: 'CONTROL_HEADER',
+                                       label: 'Partner' }] }
+  PartnerNo;
+  @UI            : { lineItem     : [{ position: 50 }],
+                     fieldGroup   : [{ position: 50,
+                                       qualifier: 'FIELD_AREA',
+                                       label: 'No of Items' }] }
+  NumberOfItems;
+}

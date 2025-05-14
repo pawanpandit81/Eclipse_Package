@@ -1,0 +1,4 @@
+@EndUserText.label: 'Company Service Defination'
+define service ZPDB00_I_R_SD_T001 {
+  expose ZPDB00_I_R_T001 as Company;
+}

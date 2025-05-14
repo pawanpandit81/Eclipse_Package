@@ -1,0 +1,34 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "SMBC Rgister",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "serviceConfiguration": {
+    "serviceBinding": "ZPDB00_I_R_SB_BUPA_UI_V4",
+    "serviceName": "ZPDB00_I_R_SD_BUPA",
+    "serviceVersion": "0001",
+    "rootEntitySet": "Partner",
+    "name": "ZPDB00_REG_BC",
+    "configurationGroup": "ZPDBP",
+    "skipRootEntity": false
+  },
+  "appConfiguration": {
+    "listReport": {},
+    "objectPages": [
+      {
+        "entitySet": "Partner",
+        "variantManagement": "control",
+        "editableHeaderContent": true
+      }
+    ],
+    "tableSettings": [
+      {
+        "entitySet": "Partner",
+        "selectionMode": "auto",
+        "rowCountMode": "auto"
+      }
+    ]
+  }
+}

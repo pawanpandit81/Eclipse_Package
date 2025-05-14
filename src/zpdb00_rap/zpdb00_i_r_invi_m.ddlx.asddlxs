@@ -1,0 +1,41 @@
+@Metadata.layer: #CUSTOMER
+@UI: { headerInfo: { typeName: 'Item',
+                     typeNamePlural: 'Items',
+                     title: { value: 'ItemNo' },
+                     description: { value: 'MaterialNo' } } }
+annotate entity ZPDB00_I_R_INVI with
+{
+  @UI.facet     : [ { id         : 'FacetMaterialGroup',
+                      label      : 'Material',
+                      type       : #FIELDGROUP_REFERENCE,
+                      targetQualifier: 'MATERIAL_AREA' },
+                    { id         : 'FacetPriceGroup',
+                      label      : 'Information',
+                      type       : #FIELDGROUP_REFERENCE,
+                      targetQualifier: 'PRICE_AREA' } ]
+  @UI.hidden: true
+  DocumentNo;
+  @UI            : { lineItem     : [{ position: 10 }] }
+  ItemNo;
+  @UI            : { lineItem     : [{ position: 20 }] }
+  MaterialNo;
+  @UI            : { lineItem     : [{ position: 30 }],
+                     fieldGroup   : [{ position: 30,
+                                       qualifier: 'MATERIAL_AREA',
+                                       label: 'Quantity' }] }
+  Quantity;
+  @UI            : { lineItem     : [{ position: 40 }],
+                     fieldGroup   : [{ position: 40,
+                                       qualifier: 'MATERIAL_AREA',
+                                       label: 'Unit' }] }
+  Unit;
+  @UI            : { fieldGroup   : [{ position: 50,
+                                       qualifier: 'PRICE_AREA',
+                                       label: 'Price' }] }
+  Price;
+  @UI            : { fieldGroup   : [{ position: 60,
+                                       qualifier: 'PRICE_AREA',
+                                       label: 'Currency' }] }
+  Currency;
+
+}

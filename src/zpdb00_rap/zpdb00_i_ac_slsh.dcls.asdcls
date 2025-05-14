@@ -1,0 +1,11 @@
+@EndUserText.label: 'Sales Header'
+@MappingRole: true
+define role ZPDB00_I_AC_SLSH {
+    grant 
+        select
+            on
+                ZPDB00_I_R_SLSH
+                    where
+                        (region) = aspect pfcg_auth(ZPDB_REGN, ZPDB_REGN);
+                        
+}

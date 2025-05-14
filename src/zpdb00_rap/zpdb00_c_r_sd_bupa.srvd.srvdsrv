@@ -1,0 +1,4 @@
+@EndUserText.label: 'Simple Object Service Defination'
+define service ZPDB00_C_R_SD_BUPA {
+  expose ZPDB00_C_R_BUPA as Partner;
+}

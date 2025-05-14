@@ -1,0 +1,17 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Launchpad Page Template",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "title": "Practice Demo Page"
+  },
+  "sections": [
+    {
+      "id": "SECTION_001",
+      "title": "Setion 001"
+    }
+  ]
+}

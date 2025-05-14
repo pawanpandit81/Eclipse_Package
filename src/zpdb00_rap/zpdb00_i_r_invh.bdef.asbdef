@@ -1,0 +1,50 @@
+managed implementation in class zcl_bp_pdb00_i_r_invh unique;
+strict ( 2 );
+
+define behavior for ZPDB00_I_R_INVH alias Head
+persistent table zpdb00_invh
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+
+  field ( readonly : update ) DocumentNo;
+  association _Item { create; }
+
+  mapping for zpdb00_invh
+    {
+      DocumentNo = document;
+      DocDate    = doc_date;
+      DocTime    = doc_time;
+      PartnerNo  = partner;
+    }
+}
+
+define behavior for ZPDB00_I_R_INVI alias Item
+persistent table zpdb00_invi
+lock dependent by _Head
+authorization dependent by _Head
+//etag master <field_name>
+{
+  update;
+  delete;
+
+  field ( readonly ) DocumentNo;
+  field ( readonly : update ) ItemNo;
+
+  association _Head;
+
+  mapping for zpdb00_invi
+    {
+      DocumentNo = document;
+      ItemNo     = item_no;
+      MaterialNo = material;
+      Price      = price;
+      Quantity   = quantity;
+      Currency   = currency;
+      Unit       = unit;
+    }
+}

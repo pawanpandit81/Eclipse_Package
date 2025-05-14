@@ -1,0 +1,47 @@
+managed with additional save implementation in class zbp_r_biz_object_hdr_alt unique;
+strict ( 2 );
+define behavior for ZR_BIZ_OBJECT_HDR_ALT alias BusinessObjectHeaderAlt
+persistent table zbiz_object_hdr
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  field ( readonly : update ) BusinessObjectID;
+  association _Item { create; }
+
+  mapping for zbiz_object_hdr
+    {
+      BusinessObjectID     = objid;
+      BusinessObjectNotes  = notes;
+      BusinessObjectStatus = status;
+    }
+
+  event StatusChanged parameter ZD_STATUSCHANGEDALT;
+  event ItemStatusChanged parameter ZD_ITEMSTATUSCHANGEDALT;
+  event ItemQuantityChanged parameter ZD_ITEMQTYCHANGEDALT;
+}
+
+define behavior for ZR_BIZ_OBJECT_ITEM_ALT alias BusinessObjectItemAlt
+persistent table zbiz_object_item
+lock dependent by _Header
+authorization dependent by _Header
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) BusinessObjectID;
+  field ( readonly : update ) BusinessObjectItem;
+  association _Header;
+
+  mapping for zbiz_object_item
+    {
+      BusinessObjectID           = objid;
+      BusinessObjectItem         = item;
+      BusinessObjectItemNotes    = itemnotes;
+      BusinessObjectItemStatus   = itemstatus;
+      BusinessObjectItemQuantity = quantity;
+      BusinessObjectItemUom      = uom;
+    } }

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Defination Demo Project RAP'
+define service ZPDB00_C_SD_BUPA {
+  expose ZPDB00_C_BUPA as Partner;
+}

@@ -1,0 +1,21 @@
+managed implementation in class zcl_bp_pdb00_i_r_t001 unique;
+strict ( 2 );
+
+define behavior for ZPDB00_I_R_T001 alias Company
+persistent table zpdb00_t001
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  field ( readonly ) Name;
+
+  mapping for zpdb00_t001
+  {
+    Name = name;
+    Branch = branch;
+    Description = description;
+  }
+}

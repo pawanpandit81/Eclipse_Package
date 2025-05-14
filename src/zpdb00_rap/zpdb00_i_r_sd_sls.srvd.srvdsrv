@@ -1,0 +1,6 @@
+@EndUserText.label: 'Service Defination SQL'
+define service ZPDB00_I_R_SD_SLS
+  provider contracts sql {
+  expose ZPDB00_I_R_SLSH as Head;
+  expose ZPDB00_I_R_SLSI as Item;
+}

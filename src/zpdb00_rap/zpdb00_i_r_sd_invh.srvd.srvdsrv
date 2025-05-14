@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Defination Invoice Interface'
+define service ZPDB00_I_R_SD_INVH {
+  expose ZPDB00_I_R_INVH as Head;
+  expose ZPDB00_I_R_INVI as Item;
+}

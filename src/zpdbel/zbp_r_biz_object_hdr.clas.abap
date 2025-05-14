@@ -1,0 +1,5 @@
+CLASS zbp_r_biz_object_hdr DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zr_biz_object_hdr.
+ENDCLASS.
+
+CLASS zbp_r_biz_object_hdr IMPLEMENTATION.
+ENDCLASS.

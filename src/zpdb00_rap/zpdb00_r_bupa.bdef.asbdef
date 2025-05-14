@@ -1,0 +1,55 @@
+managed implementation in class zbp_pdb00_r_bupa unique;
+strict;
+with draft;
+
+define behavior for ZPDB00_R_BUPA alias Partner
+persistent table zpdb00_bupa
+draft table zpdb00_bupa_d
+lock master
+total etag LastChangedAt
+authorization master ( instance )
+etag master ChangedAt
+//early numbering
+{
+  create;
+  update;
+  delete;   //( features : global );
+
+  field ( readonly : update, mandatory : create ) PartnerNo;
+  // field ( readonly: update ) PartnerNo;
+
+  draft action Resume;
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+
+  draft determine action Prepare
+  {
+    validation keyfilled;
+    validation coredata;
+  }
+
+  validation keyfilled on save { create; }
+  validation coredata on save { create; field Country, Currency; }
+
+  determination fillcurrency on modify { create; update; }
+
+  action ( features : instance ) fillStreet result [1] $self;
+  static action ClearAllStreet;
+  factory action copyLine [1];
+
+  mapping for zpdb00_bupa
+    {
+      PartnerNo     = partner;
+      Name          = name;
+      Street        = street;
+      City          = city;
+      Country       = country;
+      Currency      = currency;
+      CreatedBy     = local_created_by;
+      CreatedAt     = local_created_at;
+      ChangedBy     = local_last_changed_by;
+      ChangedAt     = local_last_changed_at;
+      LastChangedAt = last_changed_at;
+    }
+}

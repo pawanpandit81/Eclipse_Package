@@ -1,0 +1,42 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Customer Data Browser",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "objectType": "DDLS",
+    "objectName": "ZPDB00_I_TEAM"
+  },
+  "fields": [
+    {
+      "name": "USERID",
+      "nature": "general"
+    },
+    {
+      "name": "PLAYERNAME",
+      "nature": "general"
+    },
+    {
+      "name": "EMAIL",
+      "nature": "general"
+    },
+    {
+      "name": "PLAYERPOS",
+      "nature": "general"
+    },
+    {
+      "name": "SCORE",
+      "nature": "general"
+    },
+    {
+      "name": "TEAM",
+      "nature": "general"
+    },
+    {
+      "name": "TEAMLEADER",
+      "nature": "general"
+    }
+  ]
+}

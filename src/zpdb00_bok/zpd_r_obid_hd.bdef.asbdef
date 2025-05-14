@@ -1,0 +1,50 @@
+managed with additional save implementation in class zcl_bp_pd_r_obid_hd unique;
+strict ( 2 );
+
+define behavior for ZPD_R_OBID_HD alias BOHead
+persistent table zpd_obid_hd
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  field ( readonly : update ) BOObjid;
+  association _Item { create; }
+
+  mapping for zpd_obid_hd
+    {
+      BOObjid  = objid;
+      BONotes  = notes;
+      BOStatus = status;
+    }
+
+  event StatusChanged deep parameter ZPD_D_STCHG;
+}
+
+define behavior for ZPD_R_OBID_IT alias BOItem
+persistent table zpd_obid_it
+lock dependent by _Header
+authorization dependent by _Header
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) BOObjid;
+  field ( readonly : update ) BOItem;
+  association _Header;
+
+  mapping for zpd_obid_it
+    {
+      BOObjid  = objid;
+      BOItem   = item;
+      BONotes  = notes;
+      BOStatus = status;
+      BOQuant  = quant;
+      BOUom    = uom;
+    }
+
+  event ItemStatusChanged deep parameter ZPD_D_STCHGI;
+  event ItemQuantityChanged deep parameter ZPD_D_QTCHGI;
+}

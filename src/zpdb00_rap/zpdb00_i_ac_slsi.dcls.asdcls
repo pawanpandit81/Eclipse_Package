@@ -1,0 +1,12 @@
+@EndUserText.label: 'Access Control'
+@MappingRole: true
+define role ZPDB00_I_AC_SLSI {
+    grant
+        select
+            on
+                ZPDB00_I_R_SLSI
+                    where
+                      (_SalesHd.Region) = aspect pfcg_auth(ZPDB_REGN, ZPDB_REGN);
+//                        inheriting conditions from entity ZPDB00_I_SLSH;
+                        
+}
